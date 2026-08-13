@@ -1,0 +1,98 @@
+[
+  {
+    "id": "transportation",
+    "title": "Transportation",
+    "icon": "🚆",
+    "description": "Thailand has many transportation options, from trains and buses to taxis and ride-hailing apps.",
+    "tips": [
+      "Use BTS and MRT in Bangkok to avoid traffic.",
+      "Grab and other ride-hailing services are convenient in many cities.",
+      "Always check the fare before taking a taxi or negotiate the price for some local services.",
+      "For long-distance travel, trains, buses, and domestic flights are common options."
+    ]
+  },
+  {
+    "id": "sim-card",
+    "title": "SIM Card & Internet",
+    "icon": "📱",
+    "description": "Staying connected is easy with tourist SIM cards and eSIM options available at airports and stores.",
+    "tips": [
+      "Tourist SIM cards are available at major airports.",
+      "Check whether your phone is unlocked before using a local SIM.",
+      "eSIM can be a convenient option if your phone supports it.",
+      "Keep your passport ready when purchasing a SIM card."
+    ]
+  },
+  {
+    "id": "weather",
+    "title": "Weather",
+    "icon": "🌤️",
+    "description": "Thailand is generally warm throughout the year, but weather conditions vary by region and season.",
+    "tips": [
+      "Wear lightweight and breathable clothing.",
+      "Carry an umbrella during the rainy season.",
+      "Use sunscreen and drink plenty of water.",
+      "Check the local weather forecast before outdoor activities."
+    ]
+  },
+  {
+    "id": "emergency",
+    "title": "Emergency Numbers",
+    "icon": "🚨",
+    "description": "Keep important emergency numbers available while traveling in Thailand.",
+    "tips": [
+      "Tourist Police: 1155",
+      "Police: 191",
+      "Medical Emergency: 1669",
+      "Fire and Rescue: 199"
+    ]
+  },
+  {
+    "id": "thai-culture",
+    "title": "Thai Culture & Etiquette",
+    "icon": "🙏",
+    "description": "Understanding basic Thai etiquette can make your trip more comfortable and respectful.",
+    "tips": [
+      "A polite smile and respectful attitude are appreciated.",
+      "Remove your shoes before entering some homes and religious places.",
+      "Avoid touching someone's head.",
+      "Be respectful when visiting temples and religious sites."
+    ]
+  },
+  {
+    "id": "dress-code",
+    "title": "Dress Code",
+    "icon": "👕",
+    "description": "Dress comfortably for the weather while respecting local customs.",
+    "tips": [
+      "Wear modest clothing when visiting temples.",
+      "Cover shoulders and knees in many religious sites.",
+      "Lightweight clothing is suitable for hot weather.",
+      "Bring a light jacket for air-conditioned places."
+    ]
+  },
+  {
+    "id": "food",
+    "title": "Food & Dining",
+    "icon": "🍜",
+    "description": "Thailand is famous for its diverse and flavorful food culture.",
+    "tips": [
+      "Try popular dishes such as Pad Thai, Tom Yum, and Mango Sticky Rice.",
+      "Tell restaurant staff about food allergies before ordering.",
+      "Street food can be a great way to experience local cuisine.",
+      "If you have dietary restrictions, ask about ingredients before eating."
+    ]
+  },
+  {
+    "id": "money",
+    "title": "Money & Payments",
+    "icon": "💰",
+    "description": "Thai Baht (THB) is the official currency of Thailand.",
+    "tips": [
+      "Keep some cash for local markets and small shops.",
+      "Credit cards are commonly accepted in hotels and larger businesses.",
+      "ATMs are widely available in cities and tourist areas.",
+      "Check exchange rates before converting your money."
+    ]
+  }
+]

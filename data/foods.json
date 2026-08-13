@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Pad Thai",
+    "description": "A famous Thai stir-fried noodle dish with eggs, tofu, shrimp, and peanuts.",
+    "image": "/images/pad-thai.jpg",
+    "category": "Noodles"
+  },
+  {
+    "id": 2,
+    "name": "Tom Yum Goong",
+    "description": "A spicy and sour Thai soup traditionally prepared with shrimp, herbs, and lime.",
+    "image": "/images/tom-yum.jpg",
+    "category": "Soup"
+  },
+  {
+    "id": 3,
+    "name": "Som Tam",
+    "description": "A refreshing spicy green papaya salad with lime, chili, peanuts, and local seasonings.",
+    "image": "/images/som-tam.jpg",
+    "category": "Salad"
+  },
+  {
+    "id": 4,
+    "name": "Mango Sticky Rice",
+    "description": "Sweet sticky rice served with fresh mango and coconut milk.",
+    "image": "/images/mango-sticky-rice.jpg",
+    "category": "Dessert"
+  },
+  {
+    "id": 5,
+    "name": "Green Curry",
+    "description": "A rich Thai curry made with green curry paste, coconut milk, herbs, and meat or vegetables.",
+    "image": "/images/green-curry.jpg",
+    "category": "Curry"
+  },
+  {
+    "id": 6,
+    "name": "Khao Pad",
+    "description": "Thai-style fried rice commonly served with egg, vegetables, meat, or seafood.",
+    "image": "/images/khao-pad.jpg",
+    "category": "Rice"
+  },
+  {
+    "id": 7,
+    "name": "Massaman Curry",
+    "description": "A mild and aromatic Thai curry influenced by South Asian and Middle Eastern flavors.",
+    "image": "/images/massaman-curry.jpg",
+    "category": "Curry"
+  },
+  {
+    "id": 8,
+    "name": "Khao Soi",
+    "description": "A northern Thai curry noodle dish served with crispy noodles and rich coconut curry.",
+    "image": "/images/khao-soi.jpg",
+    "category": "Noodles"
+  }
+]

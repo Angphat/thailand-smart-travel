@@ -1,0 +1,417 @@
+[
+  {
+    "id": "bangkok",
+    "name": "Bangkok",
+    "province": "Bangkok",
+    "region": "Central Thailand",
+    "category": "City & Culture",
+    "image": "/images/bangkok.jpg",
+    "description": "Thailand's vibrant capital city, known for historic temples, street food, shopping, and modern city life.",
+    "highlights": [
+      "Grand Palace",
+      "Wat Arun",
+      "Wat Pho",
+      "Chatuchak Weekend Market"
+    ],
+    "bestFor": ["Culture", "Food", "Shopping"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Bangkok+Thailand"
+  },
+  {
+    "id": "chiang-mai",
+    "name": "Chiang Mai",
+    "province": "Chiang Mai",
+    "region": "Northern Thailand",
+    "category": "Culture & Nature",
+    "image": "/images/chiangmai.jpg",
+    "description": "A charming northern city surrounded by mountains, famous for temples, local culture, cafés, and nature.",
+    "highlights": [
+      "Wat Phra That Doi Suthep",
+      "Old City",
+      "Nimman Road",
+      "Doi Inthanon"
+    ],
+    "bestFor": ["Culture", "Nature", "Relaxation"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Chiang+Mai+Thailand"
+  },
+  {
+    "id": "phuket",
+    "name": "Phuket",
+    "province": "Phuket",
+    "region": "Southern Thailand",
+    "category": "Beach & Island",
+    "image": "/images/phuket.jpg",
+    "description": "A popular island destination known for beautiful beaches, island trips, viewpoints, and vibrant nightlife.",
+    "highlights": [
+      "Patong Beach",
+      "Old Phuket Town",
+      "Big Buddha",
+      "Promthep Cape"
+    ],
+    "bestFor": ["Beach", "Nature", "Relaxation"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Phuket+Thailand"
+  },
+  {
+    "id": "hat-yai",
+    "name": "Hat Yai",
+    "province": "Songkhla",
+    "region": "Southern Thailand",
+    "category": "Food & Shopping",
+    "image": "/images/hatyai.jpg",
+    "description": "A lively southern city popular for food, shopping, local markets, and convenient access from Malaysia.",
+    "highlights": [
+      "Kim Yong Market",
+      "ASEAN Night Bazaar",
+      "Hat Yai Municipal Park",
+      "Lee Garden Plaza"
+    ],
+    "bestFor": ["Food", "Shopping", "City Trips"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Hat+Yai+Thailand"
+  },
+  {
+    "id": "pattani",
+    "name": "Pattani",
+    "province": "Pattani",
+    "region": "Southern Thailand",
+    "category": "Culture & Local Life",
+    "image": "/images/pattani.jpg",
+    "description": "A culturally diverse southern province known for local traditions, historic sites, food, and coastal scenery.",
+    "highlights": [
+      "Krue Se Mosque",
+      "Pattani Central Mosque",
+      "Somdet Phra Srinagarindra Park",
+      "Pattani Old Town"
+    ],
+    "bestFor": ["Culture", "Local Experience", "Food"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pattani+Thailand"
+  },
+  {
+    "id": "krabi",
+    "name": "Krabi",
+    "province": "Krabi",
+    "region": "Southern Thailand",
+    "category": "Beach & Nature",
+    "image": "/images/krabi.jpg",
+    "description": "A stunning coastal destination famous for limestone cliffs, beaches, islands, and outdoor adventures.",
+    "highlights": [
+      "Railay Beach",
+      "Ao Nang",
+      "Tiger Cave Temple",
+      "Four Islands"
+    ],
+    "bestFor": ["Beach", "Nature", "Adventure"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Krabi+Thailand"
+  },
+  {
+    "id": "ayutthaya",
+    "name": "Ayutthaya",
+    "province": "Phra Nakhon Si Ayutthaya",
+    "region": "Central Thailand",
+    "category": "History & Culture",
+    "image": "/images/ayutthaya.jpg",
+    "description": "A historic city famous for ancient temple ruins and the heritage of the former Kingdom of Ayutthaya.",
+    "highlights": [
+      "Wat Mahathat",
+      "Wat Phra Si Sanphet",
+      "Wat Chaiwatthanaram",
+      "Ayutthaya Historical Park"
+    ],
+    "bestFor": ["History", "Culture", "Day Trips"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Ayutthaya+Thailand"
+  },
+  {
+    "id": "pattaya",
+    "name": "Pattaya",
+    "province": "Chonburi",
+    "region": "Eastern Thailand",
+    "category": "Beach & Entertainment",
+    "image": "/images/pattaya.jpg",
+    "description": "A lively coastal city near Bangkok with beaches, attractions, restaurants, and family-friendly activities.",
+    "highlights": [
+      "Jomtien Beach",
+      "Sanctuary of Truth",
+      "Khao Phra Tamnak",
+      "Pattaya Beach"
+    ],
+    "bestFor": ["Beach", "Entertainment", "Family Trips"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pattaya+Thailand"
+  },
+  {
+    "id": "hua-hin",
+    "name": "Hua Hin",
+    "province": "Prachuap Khiri Khan",
+    "region": "Central Thailand",
+    "category": "Beach & Relaxation",
+    "image": "/images/hua-hin.jpg",
+    "description": "A relaxed seaside destination known for beaches, markets, cafés, and a slower holiday atmosphere.",
+    "highlights": [
+      "Hua Hin Beach",
+      "Cicada Market",
+      "Hua Hin Night Market",
+      "Khao Takiab"
+    ],
+    "bestFor": ["Beach", "Relaxation", "Food"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Hua+Hin+Thailand"
+  },
+  {
+    "id": "chiang-rai",
+    "name": "Chiang Rai",
+    "province": "Chiang Rai",
+    "region": "Northern Thailand",
+    "category": "Culture & Nature",
+    "image": "/images/chiangrai.jpg",
+    "description": "A peaceful northern destination famous for unique temples, mountain scenery, and local culture.",
+    "highlights": [
+      "White Temple",
+      "Blue Temple",
+      "Baan Dam Museum",
+      "Golden Triangle"
+    ],
+    "bestFor": ["Culture", "Nature", "Photography"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Chiang+Rai+Thailand"
+  },
+  {
+    "id": "koh-samui",
+    "name": "Koh Samui",
+    "province": "Surat Thani",
+    "region": "Southern Thailand",
+    "category": "Beach & Island",
+    "image": "/images/koh-samui.jpg",
+    "description": "A tropical island known for beaches, waterfalls, viewpoints, and island-hopping experiences.",
+    "highlights": [
+      "Chaweng Beach",
+      "Big Buddha",
+      "Na Muang Waterfalls",
+      "Ang Thong Marine Park"
+    ],
+    "bestFor": ["Beach", "Nature", "Relaxation"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Koh+Samui+Thailand"
+  },
+  {
+    "id": "koh-phangan",
+    "name": "Koh Phangan",
+    "province": "Surat Thani",
+    "region": "Southern Thailand",
+    "category": "Beach & Island",
+    "image": "/images/koh-phangan.jpg",
+    "description": "A tropical island with beaches, viewpoints, waterfalls, and a mix of lively and peaceful areas.",
+    "highlights": ["Haad Rin", "Thong Nai Pan", "Phaeng Waterfall", "Koh Ma"],
+    "bestFor": ["Beach", "Nature", "Adventure"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Koh+Phangan+Thailand"
+  },
+  {
+    "id": "koh-tao",
+    "name": "Koh Tao",
+    "province": "Surat Thani",
+    "region": "Southern Thailand",
+    "category": "Island & Adventure",
+    "image": "/images/koh-tao.jpg",
+    "description": "A small island famous for clear waters, snorkeling, diving, beaches, and scenic viewpoints.",
+    "highlights": [
+      "Sairee Beach",
+      "Koh Nang Yuan",
+      "Shark Bay",
+      "John-Suwan Viewpoint"
+    ],
+    "bestFor": ["Diving", "Snorkeling", "Beach"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Koh+Tao+Thailand"
+  },
+  {
+    "id": "kanchanaburi",
+    "name": "Kanchanaburi",
+    "province": "Kanchanaburi",
+    "region": "Western Thailand",
+    "category": "History & Nature",
+    "image": "/images/kanchanaburi.jpg",
+    "description": "A destination combining historical landmarks, rivers, waterfalls, and beautiful natural scenery.",
+    "highlights": [
+      "Bridge over the River Kwai",
+      "Erawan Waterfalls",
+      "Kanchanaburi War Cemetery",
+      "Sai Yok National Park"
+    ],
+    "bestFor": ["History", "Nature", "Adventure"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Kanchanaburi+Thailand"
+  },
+  {
+    "id": "nan",
+    "name": "Nan",
+    "province": "Nan",
+    "region": "Northern Thailand",
+    "category": "Culture & Nature",
+    "image": "/images/nan.jpg",
+    "description": "A quiet northern province known for temples, mountain landscapes, local culture, and scenic roads.",
+    "highlights": [
+      "Wat Phumin",
+      "Doi Samer Dao",
+      "Wat Ming Muang",
+      "Nan National Museum"
+    ],
+    "bestFor": ["Culture", "Nature", "Relaxation"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nan+Thailand"
+  },
+  {
+    "id": "sukhothai",
+    "name": "Sukhothai",
+    "province": "Sukhothai",
+    "region": "Northern Thailand",
+    "category": "History & Culture",
+    "image": "/images/sukhothai.jpg",
+    "description": "A historic destination famous for ancient temples, Buddha statues, and the ruins of the Sukhothai Kingdom.",
+    "highlights": [
+      "Sukhothai Historical Park",
+      "Wat Mahathat",
+      "Wat Si Chum",
+      "Ramkhamhaeng National Museum"
+    ],
+    "bestFor": ["History", "Culture", "Photography"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Sukhothai+Thailand"
+  },
+  {
+    "id": "nakhon-ratchasima",
+    "name": "Nakhon Ratchasima",
+    "province": "Nakhon Ratchasima",
+    "region": "Northeastern Thailand",
+    "category": "Culture & Nature",
+    "image": "/images/korat.jpg",
+    "description": "A major northeastern destination offering historic sites, national parks, local food, and cultural attractions.",
+    "highlights": [
+      "Khao Yai National Park",
+      "Phimai Historical Park",
+      "Thao Suranari Monument",
+      "Jim Thompson Farm"
+    ],
+    "bestFor": ["Nature", "Culture", "Road Trips"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nakhon+Ratchasima+Thailand"
+  },
+  {
+    "id": "ubon-ratchathani",
+    "name": "Ubon Ratchathani",
+    "province": "Ubon Ratchathani",
+    "region": "Northeastern Thailand",
+    "category": "Nature & Culture",
+    "image": "/images/ubon.jpg",
+    "description": "A northeastern city known for temples, unique natural landscapes, local festivals, and Mekong-region culture.",
+    "highlights": [
+      "Pha Taem National Park",
+      "Wat Nong Pah Pong",
+      "Wat Phra That Nong Bua",
+      "Sam Phan Bok"
+    ],
+    "bestFor": ["Nature", "Culture", "Photography"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Ubon+Ratchathani+Thailand"
+  },
+  {
+    "id": "nakhon-si-thammarat",
+    "name": "Nakhon Si Thammarat",
+    "province": "Nakhon Si Thammarat",
+    "region": "Southern Thailand",
+    "category": "Culture & Nature",
+    "image": "/images/nakhon-si-thammarat.jpg",
+    "description": "A historic southern destination with temples, traditional culture, local food, and access to natural attractions.",
+    "highlights": [
+      "Wat Phra Mahathat",
+      "Khanom Beach",
+      "Kiriwong Village",
+      "Nakhon Si Thammarat Old Town"
+    ],
+    "bestFor": ["Culture", "Food", "Nature"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nakhon+Si+Thammarat+Thailand"
+  },
+  {
+    "id": "songkhla",
+    "name": "Songkhla",
+    "province": "Songkhla",
+    "region": "Southern Thailand",
+    "category": "Culture & Beach",
+    "image": "/images/songkhla.jpg",
+    "description": "A coastal city with historic old-town architecture, beaches, local food, and a relaxed atmosphere.",
+    "highlights": [
+      "Songkhla Old Town",
+      "Samila Beach",
+      "Tang Kuan Hill",
+      "Songkhla National Museum"
+    ],
+    "bestFor": ["Culture", "Beach", "Food"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Songkhla+Thailand"
+  },
+  {
+    "id": 21,
+    "name": "Trang",
+    "province": "Trang",
+    "category": "Beach",
+    "description": "A peaceful southern destination known for beautiful islands, beaches, caves, and local food.",
+    "image": "/images/trang.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Surat Thani",
+    "province": "Surat Thani",
+    "category": "Beach",
+    "description": "A gateway to famous islands and tropical destinations in the Gulf of Thailand.",
+    "image": "/images/surat-thani.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Pai",
+    "province": "Mae Hong Son",
+    "category": "Nature",
+    "description": "A relaxed mountain town surrounded by valleys, waterfalls, viewpoints, and nature.",
+    "image": "/images/pai.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Mae Hong Son",
+    "province": "Mae Hong Son",
+    "category": "Culture",
+    "description": "A scenic northern destination known for mountains, temples, local culture, and peaceful landscapes.",
+    "image": "/images/mae-hong-son.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Lopburi",
+    "province": "Lopburi",
+    "category": "Culture",
+    "description": "A historic destination famous for ancient temples, Khmer architecture, and its unique local character.",
+    "image": "/images/lopburi.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Phetchaburi",
+    "province": "Phetchaburi",
+    "category": "Culture",
+    "description": "A historic Thai city known for temples, royal palaces, traditional sweets, and local culture.",
+    "image": "/images/phetchaburi.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Rayong",
+    "province": "Rayong",
+    "category": "Beach",
+    "description": "A coastal destination with beautiful beaches, islands, seafood, and relaxing seaside experiences.",
+    "image": "/images/rayong.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Chanthaburi",
+    "province": "Chanthaburi",
+    "category": "Culture",
+    "description": "A charming eastern destination known for historic streets, fruit orchards, rivers, and local culture.",
+    "image": "/images/chanthaburi.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Nong Khai",
+    "province": "Nong Khai",
+    "category": "Culture",
+    "description": "A riverside destination along the Mekong River known for temples, local culture, and scenic views.",
+    "image": "/images/nong-khai.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Udon Thani",
+    "province": "Udon Thani",
+    "category": "Culture",
+    "description": "A northeastern Thai city offering cultural attractions, historical sites, local markets, and nearby nature.",
+    "image": "/images/udon-thani.jpg"
+  }
+]
