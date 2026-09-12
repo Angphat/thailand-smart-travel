@@ -335,83 +335,173 @@
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Songkhla+Thailand"
   },
   {
-    "id": 21,
+    "id": "trang",
     "name": "Trang",
     "province": "Trang",
+    "region": "Southern Thailand",
     "category": "Beach",
+    "image": "/images/trang.jpg",
     "description": "A peaceful southern destination known for beautiful islands, beaches, caves, and local food.",
-    "image": "/images/trang.jpg"
+    "highlights": [
+      "Emerald Cave (Morakot Cave)",
+      "Koh Mook",
+      "Pak Meng Beach",
+      "Trang Old Town"
+    ],
+    "bestFor": ["Beach", "Islands", "Nature"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Trang+Thailand"
   },
   {
-    "id": 22,
+    "id": "surat-thani",
     "name": "Surat Thani",
     "province": "Surat Thani",
+    "region": "Southern Thailand",
     "category": "Beach",
+    "image": "/images/surat-thani.jpg",
     "description": "A gateway to famous islands and tropical destinations in the Gulf of Thailand.",
-    "image": "/images/surat-thani.jpg"
+    "highlights": [
+      "Don Sak Ferry Pier",
+      "Wat Suan Mokkh",
+      "Chaiya Old Town",
+      "Ban Don Riverside"
+    ],
+    "bestFor": ["Beach", "Islands", "Nature"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Surat+Thani+Thailand"
   },
   {
-    "id": 23,
+    "id": "pai",
     "name": "Pai",
     "province": "Mae Hong Son",
+    "region": "Northern Thailand",
     "category": "Nature",
+    "image": "/images/pai.jpg",
     "description": "A relaxed mountain town surrounded by valleys, waterfalls, viewpoints, and nature.",
-    "image": "/images/pai.jpg"
+    "highlights": [
+      "Pai Canyon",
+      "Pai Walking Street",
+      "Mo Paeng Waterfall",
+      "Bamboo Bridge (Boon Ko Ku So)"
+    ],
+    "bestFor": ["Nature", "Relaxation", "Adventure"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pai+Thailand"
   },
   {
-    "id": 24,
+    "id": "mae-hong-son",
     "name": "Mae Hong Son",
     "province": "Mae Hong Son",
+    "region": "Northern Thailand",
     "category": "Culture",
+    "image": "/images/mae-hong-son.jpg",
     "description": "A scenic northern destination known for mountains, temples, local culture, and peaceful landscapes.",
-    "image": "/images/mae-hong-son.jpg"
+    "highlights": [
+      "Wat Phra That Doi Kong Mu",
+      "Tham Lod Cave",
+      "Pang Ung",
+      "Su Tong Pae Bridge"
+    ],
+    "bestFor": ["Culture", "Nature", "Photography"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Mae+Hong+Son+Thailand"
   },
   {
-    "id": 25,
+    "id": "lopburi",
     "name": "Lopburi",
     "province": "Lopburi",
+    "region": "Central Thailand",
     "category": "Culture",
+    "image": "/images/lopburi.jpg",
     "description": "A historic destination famous for ancient temples, Khmer architecture, and its unique local character.",
-    "image": "/images/lopburi.jpg"
+    "highlights": [
+      "Phra Prang Sam Yod (Monkey Temple)",
+      "Phra Narai Ratchaniwet Palace",
+      "Wat Phra Si Rattana Mahathat",
+      "Ban Vichayen"
+    ],
+    "bestFor": ["History", "Culture", "Day Trips"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Lopburi+Thailand"
   },
   {
-    "id": 26,
+    "id": "phetchaburi",
     "name": "Phetchaburi",
     "province": "Phetchaburi",
+    "region": "Central Thailand",
     "category": "Culture",
+    "image": "/images/phetchaburi.jpg",
     "description": "A historic Thai city known for temples, royal palaces, traditional sweets, and local culture.",
-    "image": "/images/phetchaburi.jpg"
+    "highlights": [
+      "Khao Wang (Phra Nakhon Khiri)",
+      "Kaeng Krachan National Park",
+      "Phra Ram Ratchaniwet Palace",
+      "Khao Luang Cave"
+    ],
+    "bestFor": ["Culture", "History", "Nature"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Phetchaburi+Thailand"
   },
   {
-    "id": 27,
+    "id": "rayong",
     "name": "Rayong",
     "province": "Rayong",
+    "region": "Eastern Thailand",
     "category": "Beach",
+    "image": "/images/rayong.jpg",
     "description": "A coastal destination with beautiful beaches, islands, seafood, and relaxing seaside experiences.",
-    "image": "/images/rayong.jpg"
+    "highlights": [
+      "Mae Ramphueng Beach",
+      "Koh Samet",
+      "Suan Son Pine Park",
+      "Rayong Fruit Market"
+    ],
+    "bestFor": ["Beach", "Relaxation", "Food"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Rayong+Thailand"
   },
   {
-    "id": 28,
+    "id": "chanthaburi",
     "name": "Chanthaburi",
     "province": "Chanthaburi",
+    "region": "Eastern Thailand",
     "category": "Culture",
+    "image": "/images/chanthaburi.jpg",
     "description": "A charming eastern destination known for historic streets, fruit orchards, rivers, and local culture.",
-    "image": "/images/chanthaburi.jpg"
+    "highlights": [
+      "Chanthaboon Waterfront Community",
+      "Cathedral of the Immaculate Conception",
+      "Nam Tok Phlio National Park",
+      "Chanthaburi Gem Market"
+    ],
+    "bestFor": ["Culture", "History", "Nature"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Chanthaburi+Thailand"
   },
   {
-    "id": 29,
+    "id": "nong-khai",
     "name": "Nong Khai",
     "province": "Nong Khai",
+    "region": "Northeastern Thailand",
     "category": "Culture",
+    "image": "/images/nong-khai.jpg",
     "description": "A riverside destination along the Mekong River known for temples, local culture, and scenic views.",
-    "image": "/images/nong-khai.jpg"
+    "highlights": [
+      "Sala Kaew Ku",
+      "Nong Khai Riverside Walking Street",
+      "Wat Pho Chai",
+      "Mekong River Promenade"
+    ],
+    "bestFor": ["Culture", "Nature", "Relaxation"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nong+Khai+Thailand"
   },
   {
-    "id": 30,
+    "id": "udon-thani",
     "name": "Udon Thani",
     "province": "Udon Thani",
+    "region": "Northeastern Thailand",
     "category": "Culture",
+    "image": "/images/udon-thani.jpg",
     "description": "A northeastern Thai city offering cultural attractions, historical sites, local markets, and nearby nature.",
-    "image": "/images/udon-thani.jpg"
+    "highlights": [
+      "Ban Chiang World Heritage Site",
+      "Red Lotus Sea (Talay Bua Daeng)",
+      "Nong Prajak Park",
+      "Udon Thani Night Market"
+    ],
+    "bestFor": ["Culture", "History", "Nature"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Udon+Thani+Thailand"
   }
 ]
