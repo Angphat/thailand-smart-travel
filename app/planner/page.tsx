@@ -106,7 +106,7 @@ export default function PlannerPage() {
       {/* HERO */}
       <section className="thai-hero">
         <div className="mx-auto max-w-6xl px-6 py-20 text-center md:py-24">
-          <div className="inline-flex items-center rounded-full bg-white/15 px-4 py-2 text-sm font-semibold backdrop-blur">
+          <div className="inline-flex items-center rounded-full bg-cream-light/15 px-4 py-2 text-sm font-semibold backdrop-blur">
             ✨ AI Travel Planner
           </div>
 
@@ -114,7 +114,7 @@ export default function PlannerPage() {
             Plan your Thailand trip with AI.
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/90">
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-cream-light/90">
             Create a personalized Thailand itinerary based on your destination,
             budget, travel duration, and interests.
           </p>
@@ -126,15 +126,15 @@ export default function PlannerPage() {
         <div className="mx-auto max-w-5xl">
           <div className="thai-card p-6 md:p-8">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-red-600">
+              <p className="text-sm font-semibold uppercase tracking-wider text-rust">
                 AI TRAVEL ASSISTANT
               </p>
 
-              <h2 className="mt-2 text-2xl font-bold text-slate-900">
+              <h2 className="mt-2 text-2xl font-bold text-ink">
                 Tell us about your trip
               </h2>
 
-              <p className="mt-2 text-slate-500">
+              <p className="mt-2 text-ink/60">
                 Your answers help the AI create a more suitable travel plan.
               </p>
             </div>
@@ -142,14 +142,14 @@ export default function PlannerPage() {
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               {/* DESTINATION */}
               <div>
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-2 block text-sm font-semibold text-ink/80">
                   📍 Destination
                 </label>
 
                 <select
                   value={destination}
                   onChange={(e) => setDestination(e.target.value)}
-                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none focus:border-red-500"
+                  className="w-full rounded-xl border border-sand bg-cream-light px-4 py-3 outline-none focus:border-moss"
                 >
                   <option value="">Select destination</option>
 
@@ -166,7 +166,7 @@ export default function PlannerPage() {
                 </select>
 
                 {destinationFromUrl && (
-                  <p className="mt-2 text-xs text-green-600">
+                  <p className="mt-2 text-xs text-moss">
                     ✓ Destination selected from Explore
                   </p>
                 )}
@@ -174,14 +174,14 @@ export default function PlannerPage() {
 
               {/* DAYS */}
               <div>
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-2 block text-sm font-semibold text-ink/80">
                   📅 Number of Days
                 </label>
 
                 <select
                   value={days}
                   onChange={(e) => setDays(e.target.value)}
-                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none focus:border-red-500"
+                  className="w-full rounded-xl border border-sand bg-cream-light px-4 py-3 outline-none focus:border-moss"
                 >
                   <option value="1">1 Day</option>
                   <option value="2">2 Days</option>
@@ -196,14 +196,14 @@ export default function PlannerPage() {
 
               {/* CURRENCY */}
               <div>
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-2 block text-sm font-semibold text-ink/80">
                   💰 Budget Currency
                 </label>
 
                 <select
                   value={currency}
                   onChange={(e) => setCurrency(e.target.value)}
-                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none focus:border-red-500"
+                  className="w-full rounded-xl border border-sand bg-cream-light px-4 py-3 outline-none focus:border-moss"
                 >
                   {currencies.map((item) => (
                     <option key={item.code} value={item.code}>
@@ -215,7 +215,7 @@ export default function PlannerPage() {
 
               {/* BUDGET */}
               <div>
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-2 block text-sm font-semibold text-ink/80">
                   💵 Budget
                 </label>
 
@@ -225,20 +225,20 @@ export default function PlannerPage() {
                   value={budget}
                   onChange={(e) => setBudget(e.target.value)}
                   placeholder="500"
-                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none focus:border-red-500"
+                  className="w-full rounded-xl border border-sand bg-cream-light px-4 py-3 outline-none focus:border-moss"
                 />
               </div>
 
               {/* INTEREST */}
               <div className="md:col-span-2">
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-2 block text-sm font-semibold text-ink/80">
                   ❤️ Main Interest
                 </label>
 
                 <select
                   value={interest}
                   onChange={(e) => setInterest(e.target.value)}
-                  className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none focus:border-red-500"
+                  className="w-full rounded-xl border border-sand bg-cream-light px-4 py-3 outline-none focus:border-moss"
                 >
                   <option>Culture & Food</option>
                   <option>Beaches & Nature</option>
@@ -262,7 +262,7 @@ export default function PlannerPage() {
             </button>
 
             {error && (
-              <div className="mt-5 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+              <div className="mt-5 rounded-xl border border-rust/30 bg-rust/10 p-4 text-sm text-rust">
                 {error}
               </div>
             )}
@@ -276,33 +276,33 @@ export default function PlannerPage() {
           <div className="mx-auto max-w-5xl">
             {/* TRIP SUMMARY */}
             <div className="mb-10 text-center">
-              <p className="text-sm font-semibold uppercase tracking-wider text-red-600">
+              <p className="text-sm font-semibold uppercase tracking-wider text-rust">
                 YOUR AI-GENERATED TRIP
               </p>
 
-              <h2 className="mt-2 text-3xl font-bold text-slate-900 md:text-4xl">
+              <h2 className="mt-2 text-3xl font-bold text-ink md:text-4xl">
                 {itinerary.tripSummary?.destination}
               </h2>
 
-              <p className="mx-auto mt-3 max-w-2xl text-slate-600">
+              <p className="mx-auto mt-3 max-w-2xl text-ink/70">
                 A personalized {itinerary.tripSummary?.duration} itinerary
                 designed around your travel preferences.
               </p>
 
               <div className="mt-6 flex flex-wrap justify-center gap-3">
-                <span className="rounded-full bg-red-50 px-4 py-2 text-sm font-semibold text-red-700">
+                <span className="rounded-full bg-rust/10 px-4 py-2 text-sm font-semibold text-rust">
                   📍 {itinerary.tripSummary?.destination}
                 </span>
 
-                <span className="rounded-full bg-red-50 px-4 py-2 text-sm font-semibold text-red-700">
+                <span className="rounded-full bg-rust/10 px-4 py-2 text-sm font-semibold text-rust">
                   📅 {itinerary.tripSummary?.duration}
                 </span>
 
-                <span className="rounded-full bg-red-50 px-4 py-2 text-sm font-semibold text-red-700">
+                <span className="rounded-full bg-rust/10 px-4 py-2 text-sm font-semibold text-rust">
                   💰 {itinerary.tripSummary?.budget}
                 </span>
 
-                <span className="rounded-full bg-red-50 px-4 py-2 text-sm font-semibold text-red-700">
+                <span className="rounded-full bg-rust/10 px-4 py-2 text-sm font-semibold text-rust">
                   ❤️ {itinerary.tripSummary?.interest}
                 </span>
               </div>
@@ -313,11 +313,11 @@ export default function PlannerPage() {
               {itinerary.days?.map((day) => (
                 <article
                   key={day.day}
-                  className="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200"
+                  className="overflow-hidden rounded-3xl bg-cream-light shadow-sm ring-1 ring-sand"
                 >
                   {/* DAY HEADER */}
-                  <div className="bg-red-600 px-6 py-5 text-white md:px-8">
-                    <p className="text-sm font-semibold uppercase tracking-wider text-red-100">
+                  <div className="bg-moss px-6 py-5 text-cream-light md:px-8">
+                    <p className="text-sm font-semibold uppercase tracking-wider text-cream-light/80">
                       Thailand Trip
                     </p>
 
@@ -328,18 +328,18 @@ export default function PlannerPage() {
                   <div className="p-6 md:p-8">
                     <div className="grid gap-5">
                       {/* MORNING */}
-                      <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                      <div className="rounded-2xl border border-sand bg-cream p-5">
                         <div className="flex gap-4">
-                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-xl">
+                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-rust/10 text-xl">
                             🌅
                           </div>
 
                           <div>
-                            <p className="text-sm font-bold text-red-600">
+                            <p className="text-sm font-bold text-rust">
                               Morning
                             </p>
 
-                            <p className="mt-2 leading-7 text-slate-700">
+                            <p className="mt-2 leading-7 text-ink/80">
                               {day.morning}
                             </p>
                           </div>
@@ -347,18 +347,16 @@ export default function PlannerPage() {
                       </div>
 
                       {/* LUNCH */}
-                      <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                      <div className="rounded-2xl border border-sand bg-cream p-5">
                         <div className="flex gap-4">
-                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-xl">
+                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-rust/10 text-xl">
                             🍜
                           </div>
 
                           <div>
-                            <p className="text-sm font-bold text-red-600">
-                              Lunch
-                            </p>
+                            <p className="text-sm font-bold text-rust">Lunch</p>
 
-                            <p className="mt-2 leading-7 text-slate-700">
+                            <p className="mt-2 leading-7 text-ink/80">
                               {day.lunch}
                             </p>
                           </div>
@@ -366,18 +364,18 @@ export default function PlannerPage() {
                       </div>
 
                       {/* AFTERNOON */}
-                      <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                      <div className="rounded-2xl border border-sand bg-cream p-5">
                         <div className="flex gap-4">
-                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-xl">
+                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-rust/10 text-xl">
                             ☀️
                           </div>
 
                           <div>
-                            <p className="text-sm font-bold text-red-600">
+                            <p className="text-sm font-bold text-rust">
                               Afternoon
                             </p>
 
-                            <p className="mt-2 leading-7 text-slate-700">
+                            <p className="mt-2 leading-7 text-ink/80">
                               {day.afternoon}
                             </p>
                           </div>
@@ -385,18 +383,18 @@ export default function PlannerPage() {
                       </div>
 
                       {/* DINNER */}
-                      <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                      <div className="rounded-2xl border border-sand bg-cream p-5">
                         <div className="flex gap-4">
-                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-xl">
+                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-rust/10 text-xl">
                             🍽️
                           </div>
 
                           <div>
-                            <p className="text-sm font-bold text-red-600">
+                            <p className="text-sm font-bold text-rust">
                               Dinner
                             </p>
 
-                            <p className="mt-2 leading-7 text-slate-700">
+                            <p className="mt-2 leading-7 text-ink/80">
                               {day.dinner}
                             </p>
                           </div>
@@ -404,18 +402,18 @@ export default function PlannerPage() {
                       </div>
 
                       {/* EVENING */}
-                      <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                      <div className="rounded-2xl border border-sand bg-cream p-5">
                         <div className="flex gap-4">
-                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-xl">
+                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-rust/10 text-xl">
                             🌙
                           </div>
 
                           <div>
-                            <p className="text-sm font-bold text-red-600">
+                            <p className="text-sm font-bold text-rust">
                               Evening
                             </p>
 
-                            <p className="mt-2 leading-7 text-slate-700">
+                            <p className="mt-2 leading-7 text-ink/80">
                               {day.evening}
                             </p>
                           </div>
@@ -430,15 +428,13 @@ export default function PlannerPage() {
             {/* BUDGET TIPS */}
             {itinerary.budgetTips?.length > 0 && (
               <div className="thai-card mt-8 p-6 md:p-8">
-                <h3 className="text-xl font-bold text-slate-900">
-                  💰 Budget Tips
-                </h3>
+                <h3 className="text-xl font-bold text-ink">💰 Budget Tips</h3>
 
                 <div className="mt-5 space-y-3">
                   {itinerary.budgetTips.map((tip, index) => (
                     <div
                       key={index}
-                      className="rounded-xl bg-red-50 p-4 text-sm leading-6 text-slate-700"
+                      className="rounded-xl bg-rust/10 p-4 text-sm leading-6 text-ink/80"
                     >
                       {tip}
                     </div>
@@ -450,15 +446,13 @@ export default function PlannerPage() {
             {/* TRAVEL TIPS */}
             {itinerary.travelTips?.length > 0 && (
               <div className="thai-card mt-8 p-6 md:p-8">
-                <h3 className="text-xl font-bold text-slate-900">
-                  💡 Travel Tips
-                </h3>
+                <h3 className="text-xl font-bold text-ink">💡 Travel Tips</h3>
 
                 <div className="mt-5 space-y-3">
                   {itinerary.travelTips.map((tip, index) => (
                     <div
                       key={index}
-                      className="rounded-xl bg-slate-50 p-4 text-sm leading-6 text-slate-700"
+                      className="rounded-xl bg-cream p-4 text-sm leading-6 text-ink/80"
                     >
                       {tip}
                     </div>

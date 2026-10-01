@@ -1,11 +1,21 @@
 import { NextResponse } from "next/server";
 
 import { ai } from "@/lib/gemini";
+import { getCurrentUser } from "@/lib/auth";
 import destinations from "@/data/destinations.json";
 import foods from "@/data/foods.json";
 
 export async function POST(request: Request) {
   try {
+    const user = await getCurrentUser();
+
+    if (!user) {
+      return NextResponse.json(
+        { error: "Please sign in to use the AI Travel Planner." },
+        { status: 401 },
+      );
+    }
+
     const body = await request.json();
 
     const { destination, days, budget, interest } = body;
@@ -146,7 +156,6 @@ Create one object inside "days" for every day of the trip.
     let response;
 
     try {
-      // First attempt
       response = await ai.models.generateContent({
         model: "gemini-3.6-flash",
         contents: prompt,
@@ -158,11 +167,9 @@ Create one object inside "days" for every day of the trip.
     } catch (firstError) {
       console.log("Gemini 3.6 Flash failed. Retrying...");
 
-      // Wait before retrying
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
       try {
-        // Second attempt
         response = await ai.models.generateContent({
           model: "gemini-3.6-flash",
           contents: prompt,
@@ -176,9 +183,8 @@ Create one object inside "days" for every day of the trip.
 
         console.error(secondError);
 
-        // Fallback model
         response = await ai.models.generateContent({
-          model: "gemini-2.5-flash-lite",
+          model: "gemini-3.5-flash-lite",
           contents: prompt,
           config: {
             maxOutputTokens: 3000,

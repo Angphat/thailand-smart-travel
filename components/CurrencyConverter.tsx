@@ -77,17 +77,17 @@ export default function CurrencyConverter() {
   }
 
   return (
-    <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 md:p-8">
+    <div className="rounded-3xl bg-cream-light p-6 shadow-sm ring-1 ring-sand md:p-8">
       {/* Amount */}
       <div>
-        <label className="text-sm font-semibold text-slate-700">Amount</label>
+        <label className="text-sm font-semibold text-ink/80">Amount</label>
 
         <input
           type="number"
           min="0"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
-          className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-lg font-semibold outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-100"
+          className="mt-2 w-full rounded-xl border border-sand bg-cream px-4 py-3 text-lg font-semibold outline-none transition focus:border-moss focus:ring-2 focus:ring-moss/15"
           placeholder="Enter amount"
         />
       </div>
@@ -96,7 +96,7 @@ export default function CurrencyConverter() {
       <div className="mt-6 grid items-end gap-4 md:grid-cols-[1fr_auto_1fr]">
         {/* From */}
         <div>
-          <label className="text-sm font-semibold text-slate-700">From</label>
+          <label className="text-sm font-semibold text-ink/80">From</label>
 
           <select
             value={from}
@@ -105,7 +105,7 @@ export default function CurrencyConverter() {
               setResult(null);
               setRate(null);
             }}
-            className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100"
+            className="mt-2 w-full rounded-xl border border-sand bg-cream px-4 py-3 outline-none focus:border-moss focus:ring-2 focus:ring-moss/15"
           >
             {currencies.map((currency) => (
               <option key={currency.code} value={currency.code}>
@@ -119,7 +119,7 @@ export default function CurrencyConverter() {
         <button
           type="button"
           onClick={swapCurrencies}
-          className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-300 text-lg transition hover:border-red-400 hover:bg-red-50"
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-sand text-lg transition hover:border-moss hover:bg-moss/10"
           aria-label="Swap currencies"
         >
           ⇄
@@ -127,7 +127,7 @@ export default function CurrencyConverter() {
 
         {/* To */}
         <div>
-          <label className="text-sm font-semibold text-slate-700">To</label>
+          <label className="text-sm font-semibold text-ink/80">To</label>
 
           <select
             value={to}
@@ -136,7 +136,7 @@ export default function CurrencyConverter() {
               setResult(null);
               setRate(null);
             }}
-            className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100"
+            className="mt-2 w-full rounded-xl border border-sand bg-cream px-4 py-3 outline-none focus:border-moss focus:ring-2 focus:ring-moss/15"
           >
             {currencies.map((currency) => (
               <option key={currency.code} value={currency.code}>
@@ -152,33 +152,31 @@ export default function CurrencyConverter() {
         type="button"
         onClick={convertCurrency}
         disabled={loading}
-        className="mt-6 w-full rounded-xl bg-red-600 px-5 py-3.5 font-semibold text-white transition hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-6 w-full rounded-xl bg-moss px-5 py-3.5 font-semibold text-cream-light transition hover:bg-moss-dark disabled:cursor-not-allowed disabled:opacity-60"
       >
         {loading ? "Converting..." : "Convert Currency"}
       </button>
 
       {/* Error */}
       {error && (
-        <div className="mt-5 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+        <div className="mt-5 rounded-xl border border-rust/30 bg-rust/10 p-4 text-sm text-rust">
           {error}
         </div>
       )}
 
       {/* Result */}
       {result !== null && rate !== null && (
-        <div className="mt-6 rounded-2xl bg-red-50 p-6 text-center">
-          <p className="text-sm font-medium text-slate-600">
-            Conversion Result
-          </p>
+        <div className="mt-6 rounded-2xl bg-moss/10 p-6 text-center">
+          <p className="text-sm font-medium text-ink/70">Conversion Result</p>
 
-          <p className="mt-2 text-3xl font-bold text-red-700">
+          <p className="mt-2 text-3xl font-bold text-moss">
             {result.toLocaleString(undefined, {
               maximumFractionDigits: 2,
             })}{" "}
             {to}
           </p>
 
-          <p className="mt-3 text-sm text-slate-600">
+          <p className="mt-3 text-sm text-ink/70">
             {amount} {from} ={" "}
             {result.toLocaleString(undefined, {
               maximumFractionDigits: 2,
@@ -186,7 +184,7 @@ export default function CurrencyConverter() {
             {to}
           </p>
 
-          <p className="mt-1 text-xs text-slate-500">
+          <p className="mt-1 text-xs text-ink/50">
             1 {from} ≈ {rate.toFixed(4)} {to}
           </p>
         </div>

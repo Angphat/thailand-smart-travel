@@ -105,11 +105,11 @@ export default function TranslatorPage() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen bg-cream">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-red-700 via-red-600 to-amber-500 px-6 py-16 text-white">
+      <section className="bg-gradient-to-br from-moss via-moss-dark to-ink px-6 py-16 text-cream-light">
         <div className="mx-auto max-w-5xl">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-amber-100">
+          <div className="inline-flex items-center gap-2 rounded-full bg-cream-light/10 px-4 py-2 text-sm font-medium text-gold">
             <Sparkles size={16} />
             AI-Powered Translation
           </div>
@@ -118,7 +118,7 @@ export default function TranslatorPage() {
             Communicate with confidence in Thailand
           </h1>
 
-          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-cream-light/80 sm:text-lg">
             Translate useful travel phrases between multiple languages using AI.
           </p>
         </div>
@@ -127,19 +127,19 @@ export default function TranslatorPage() {
       {/* Translator */}
       <section className="px-6 py-10">
         <div className="mx-auto max-w-5xl">
-          <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8">
+          <div className="rounded-3xl border border-sand bg-cream-light p-5 shadow-sm sm:p-8">
             {/* Language Controls */}
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end">
               {/* From */}
               <div className="flex-1">
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-2 block text-sm font-semibold text-ink/80">
                   From
                 </label>
 
                 <select
                   value={fromLanguage}
                   onChange={(e) => setFromLanguage(e.target.value)}
-                  className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-100"
+                  className="w-full rounded-2xl border border-sand bg-cream px-4 py-3 text-sm font-medium outline-none transition focus:border-moss focus:ring-2 focus:ring-moss/15"
                 >
                   {languages.map((language) => (
                     <option key={language.code} value={language.code}>
@@ -153,7 +153,7 @@ export default function TranslatorPage() {
               <button
                 type="button"
                 onClick={handleSwapLanguages}
-                className="flex h-12 w-12 shrink-0 items-center justify-center self-center rounded-2xl border border-slate-200 bg-white text-slate-600 transition hover:bg-slate-50"
+                className="flex h-12 w-12 shrink-0 items-center justify-center self-center rounded-2xl border border-sand bg-cream-light text-ink/70 transition hover:bg-cream"
                 title="Swap languages"
               >
                 <ArrowDownUp size={18} />
@@ -161,14 +161,14 @@ export default function TranslatorPage() {
 
               {/* To */}
               <div className="flex-1">
-                <label className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-2 block text-sm font-semibold text-ink/80">
                   To
                 </label>
 
                 <select
                   value={toLanguage}
                   onChange={(e) => setToLanguage(e.target.value)}
-                  className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-100"
+                  className="w-full rounded-2xl border border-sand bg-cream px-4 py-3 text-sm font-medium outline-none transition focus:border-moss focus:ring-2 focus:ring-moss/15"
                 >
                   {languages.map((language) => (
                     <option key={language.code} value={language.code}>
@@ -182,17 +182,15 @@ export default function TranslatorPage() {
             {/* Translation Boxes */}
             <div className="mt-6 grid gap-5 lg:grid-cols-2">
               {/* Input */}
-              <div className="rounded-3xl border border-red-100 bg-red-50/50 p-5">
+              <div className="rounded-3xl border border-rust/20 bg-rust/5 p-5">
                 <div className="flex items-center justify-between">
-                  <p className="text-sm font-semibold text-slate-700">
-                    Your text
-                  </p>
+                  <p className="text-sm font-semibold text-ink/80">Your text</p>
 
                   <button
                     type="button"
                     onClick={handleClear}
                     disabled={!text && !translation}
-                    className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 transition hover:text-red-500 disabled:cursor-not-allowed disabled:opacity-40"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-ink/40 transition hover:text-rust disabled:cursor-not-allowed disabled:opacity-40"
                   >
                     <Trash2 size={14} />
                     Clear
@@ -204,18 +202,18 @@ export default function TranslatorPage() {
                   onChange={(e) => setText(e.target.value.slice(0, 500))}
                   placeholder="Type your message here..."
                   rows={8}
-                  className="mt-4 w-full resize-none bg-transparent text-base leading-7 text-slate-800 outline-none placeholder:text-slate-400"
+                  className="mt-4 w-full resize-none bg-transparent text-base leading-7 text-ink outline-none placeholder:text-ink/40"
                 />
 
-                <div className="mt-3 text-right text-xs text-slate-400">
+                <div className="mt-3 text-right text-xs text-ink/40">
                   {text.length} / 500
                 </div>
               </div>
 
               {/* Output */}
-              <div className="rounded-3xl border border-emerald-100 bg-emerald-50/50 p-5">
+              <div className="rounded-3xl border border-moss/20 bg-moss/5 p-5">
                 <div className="flex items-center justify-between">
-                  <p className="text-sm font-semibold text-slate-700">
+                  <p className="text-sm font-semibold text-ink/80">
                     Translation
                   </p>
 
@@ -223,7 +221,7 @@ export default function TranslatorPage() {
                     type="button"
                     onClick={handleCopy}
                     disabled={!translation}
-                    className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 transition hover:text-red-600 disabled:cursor-not-allowed disabled:opacity-40"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-ink/40 transition hover:text-moss disabled:cursor-not-allowed disabled:opacity-40"
                   >
                     <Copy size={14} />
                     Copy
@@ -234,23 +232,23 @@ export default function TranslatorPage() {
                   {loading ? (
                     <div className="flex h-[200px] items-center justify-center">
                       <div className="text-center">
-                        <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-red-200 border-t-red-600" />
+                        <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-moss/30 border-t-moss" />
 
-                        <p className="mt-4 text-sm text-slate-500">
+                        <p className="mt-4 text-sm text-ink/50">
                           AI is translating...
                         </p>
                       </div>
                     </div>
                   ) : translation ? (
-                    <p className="whitespace-pre-wrap text-lg leading-8 text-slate-900">
+                    <p className="whitespace-pre-wrap text-lg leading-8 text-ink">
                       {translation}
                     </p>
                   ) : (
                     <div className="flex h-[200px] items-center justify-center text-center">
                       <div>
-                        <Sparkles className="mx-auto text-red-300" size={30} />
+                        <Sparkles className="mx-auto text-moss/40" size={30} />
 
-                        <p className="mt-3 text-sm text-slate-400">
+                        <p className="mt-3 text-sm text-ink/40">
                           Your translation will appear here.
                         </p>
                       </div>
@@ -262,7 +260,7 @@ export default function TranslatorPage() {
 
             {/* Error */}
             {error && (
-              <div className="mt-5 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+              <div className="mt-5 rounded-2xl border border-rust/30 bg-rust/10 px-4 py-3 text-sm text-rust">
                 {error}
               </div>
             )}
@@ -272,7 +270,7 @@ export default function TranslatorPage() {
               type="button"
               onClick={handleTranslate}
               disabled={loading || !text.trim()}
-              className="mt-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-red-600 px-6 py-4 text-sm font-semibold text-white transition hover:bg-red-700 disabled:cursor-not-allowed disabled:bg-slate-300"
+              className="mt-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-moss px-6 py-4 text-sm font-semibold text-cream-light transition hover:bg-moss-dark disabled:cursor-not-allowed disabled:bg-sand"
             >
               <Sparkles size={18} />
 
@@ -282,11 +280,9 @@ export default function TranslatorPage() {
 
           {/* Quick Phrases */}
           <div className="mt-8">
-            <h2 className="text-lg font-bold text-slate-900">
-              Quick Travel Phrases
-            </h2>
+            <h2 className="text-lg font-bold text-ink">Quick Travel Phrases</h2>
 
-            <p className="mt-1 text-sm text-slate-500">
+            <p className="mt-1 text-sm text-ink/50">
               Click a phrase to translate it quickly.
             </p>
 
@@ -296,7 +292,7 @@ export default function TranslatorPage() {
                   key={phrase}
                   type="button"
                   onClick={() => handleQuickPhrase(phrase)}
-                  className="rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left text-sm font-medium text-slate-700 shadow-sm transition hover:border-red-300 hover:bg-red-50"
+                  className="rounded-2xl border border-sand bg-cream-light px-5 py-4 text-left text-sm font-medium text-ink/80 shadow-sm transition hover:border-rust/30 hover:bg-rust/5"
                 >
                   {phrase}
                 </button>

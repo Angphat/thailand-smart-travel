@@ -1,12 +1,32 @@
 @import "tailwindcss";
 
+@theme {
+  --color-cream: #f7f1e3;
+  --color-cream-light: #fffbf2;
+  --color-ink: #352e26;
+  --color-moss: #5f6f47;
+  --color-moss-dark: #4a5738;
+  --color-rust: #ad5a35;
+  --color-gold: #c9a227;
+  --color-sand: #e2d5b8;
+
+  --font-heading: var(--font-fraunces), var(--font-noto-serif-thai), serif;
+}
+
 :root {
-  --thai-red: #a51931;
-  --thai-gold: #d4a72c;
-  --emerald: #0f766e;
-  --navy: #0f172a;
-  --warm-white: #fffcf7;
-  --text: #1e293b;
+  /* ===== Vintage palette (single source of truth) ===== */
+  --thai-red: #ad5a35; /* rust — เดิมเป็นแดงไทย ตอนนี้คือ rust */
+  --thai-red-dark: #8f4728;
+  --thai-gold: #c9a227;
+  --thai-navy: #352e26; /* เดิมเป็นกรม ตอนนี้คือ ink */
+  --thai-blue: #5f6f47; /* moss ใช้แทนจุดที่เคยเป็นสีฟ้า */
+  --thai-cream: #f7f1e3;
+  --thai-border: #e2d5b8; /* sand */
+
+  --emerald: #5f6f47; /* moss แทน emerald เดิม */
+  --navy: #352e26;
+  --warm-white: #fffbf2;
+  --text: #352e26;
 }
 
 * {
@@ -24,6 +44,13 @@ body {
   font-family: var(--font-plus-jakarta), var(--font-noto-thai), sans-serif;
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
 button,
 input,
 textarea,
@@ -36,21 +63,13 @@ button {
 }
 
 ::selection {
-  background: #d4a72c;
-  color: #0f172a;
-}
-:root {
-  --thai-red: #c62828;
-  --thai-red-dark: #a61f1f;
-  --thai-gold: #d4a72c;
-  --thai-navy: #172033;
-  --thai-blue: #315a7d;
-  --thai-cream: #faf8f3;
-  --thai-border: #e5e7eb;
+  background: var(--thai-gold);
+  color: var(--thai-navy);
 }
 
 /* ================================
    Thailand Smart Travel Theme
+   (Vintage / Old Postcard)
 ================================ */
 
 .thai-page {
@@ -62,47 +81,48 @@ button {
 .thai-hero {
   background: linear-gradient(
     135deg,
-    rgba(198, 40, 40, 0.96),
-    rgba(166, 31, 31, 0.92)
+    rgba(95, 111, 71, 0.95),
+    rgba(74, 87, 56, 0.92)
   );
-  color: white;
+  color: #fffbf2;
 }
 
 .thai-hero-soft {
-  background: linear-gradient(135deg, #fff8f5, #fffdf8);
+  background: linear-gradient(135deg, #f7f1e3, #fffbf2);
 }
 
 .thai-card {
-  background: white;
+  background: #fffbf2;
   border: 1px solid var(--thai-border);
-  border-radius: 24px;
-  box-shadow: 0 8px 30px rgba(23, 32, 51, 0.06);
+  border-radius: 20px;
+  box-shadow: 0 6px 24px rgba(53, 46, 38, 0.08);
 }
 
 .thai-card:hover {
-  box-shadow: 0 14px 35px rgba(23, 32, 51, 0.1);
+  box-shadow: 0 12px 30px rgba(53, 46, 38, 0.12);
 }
 
 .thai-primary-btn {
-  background: var(--thai-red);
-  color: white;
+  background: var(--thai-blue); /* moss */
+  color: #fffbf2;
   transition: all 0.2s ease;
 }
 
 .thai-primary-btn:hover {
   background: var(--thai-red-dark);
+  background: #4a5738; /* moss-dark */
   transform: translateY(-1px);
 }
 
 .thai-secondary-btn {
-  background: white;
-  color: var(--thai-red);
-  border: 1px solid #e5b0b0;
+  background: #fffbf2;
+  color: var(--thai-blue);
+  border: 1px solid var(--thai-border);
   transition: all 0.2s ease;
 }
 
 .thai-secondary-btn:hover {
-  background: #fff5f5;
+  background: #f1ead6;
 }
 
 .thai-section {
@@ -110,19 +130,20 @@ button {
 }
 
 .thai-white-section {
-  background: white;
+  background: #fffbf2;
 }
 
 .thai-heading {
   color: var(--thai-navy);
+  font-family: var(--font-heading);
 }
 
 .thai-muted {
-  color: #64748b;
+  color: #6b6052;
 }
 
 .thai-label {
-  color: var(--thai-red);
+  color: var(--thai-red); /* rust */
 }
 
 .thai-gold {

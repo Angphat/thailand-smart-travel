@@ -1,0 +1,87 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("USER")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  bookings Booking[]
+  reviews  Review[]
+}
+
+model Destination {
+  id          String   @id @default(cuid())
+  name        String
+  province    String
+  region      String
+  category    String
+  description String
+  image       String
+  bestFor     String[]
+  highlights  String[]
+  mapsUrl     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  bookings Booking[]
+  reviews  Review[]
+}
+
+model Food {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  image       String
+  category    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Tip {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  category    String
+  image       String?
+  icon        String?
+  tips        String[] @default([])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Booking {
+  id            String   @id @default(cuid())
+  userId        String
+  destinationId String
+  bookingDate   DateTime
+  status        String   @default("PENDING")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  destination Destination @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+}
+
+model Review {
+  id            String   @id @default(cuid())
+  userId        String
+  destinationId String
+  rating        Int
+  comment       String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  destination Destination @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+}

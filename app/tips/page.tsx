@@ -1,23 +1,22 @@
-import tipsData from "@/data/tips.json";
-import { TravelTip } from "@/types/tip";
+import { getAllTips } from "@/lib/tips";
 
-const tips = tipsData as TravelTip[];
+export default async function TravelTipsPage() {
+  const tips = await getAllTips();
 
-export default function TravelTipsPage() {
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen bg-cream">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-red-700 via-red-600 to-amber-500">
+      <section className="bg-gradient-to-br from-moss via-moss-dark to-ink">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/80">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold">
             Travel Guide
           </p>
 
-          <h1 className="mt-3 text-4xl font-bold text-white md:text-5xl">
+          <h1 className="mt-3 text-4xl font-bold text-cream-light md:text-5xl">
             Thailand Travel Tips
           </h1>
 
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-white/90">
+          <p className="mt-4 max-w-2xl text-lg leading-8 text-cream-light/90">
             Helpful information to make your trip to Thailand easier, safer, and
             more enjoyable.
           </p>
@@ -30,20 +29,18 @@ export default function TravelTipsPage() {
           {tips.map((tip) => (
             <article
               key={tip.id}
-              className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-md"
+              className="rounded-3xl bg-cream-light p-6 shadow-sm ring-1 ring-sand transition hover:-translate-y-1 hover:shadow-md"
             >
               {/* Icon */}
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 text-3xl">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-rust/10 text-3xl">
                 {tip.icon}
               </div>
 
               {/* Title */}
-              <h2 className="mt-5 text-xl font-bold text-slate-900">
-                {tip.title}
-              </h2>
+              <h2 className="mt-5 text-xl font-bold text-ink">{tip.title}</h2>
 
               {/* Description */}
-              <p className="mt-3 text-sm leading-6 text-slate-600">
+              <p className="mt-3 text-sm leading-6 text-ink/70">
                 {tip.description}
               </p>
 
@@ -52,9 +49,9 @@ export default function TravelTipsPage() {
                 {tip.tips.map((item) => (
                   <li
                     key={item}
-                    className="flex gap-3 text-sm leading-6 text-slate-700"
+                    className="flex gap-3 text-sm leading-6 text-ink/80"
                   >
-                    <span className="mt-1 text-red-600">✓</span>
+                    <span className="mt-1 text-moss">✓</span>
 
                     <span>{item}</span>
                   </li>

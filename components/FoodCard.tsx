@@ -7,8 +7,8 @@ interface FoodCardProps {
 
 export default function FoodCard({ food }: FoodCardProps) {
   return (
-    <article className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <div className="relative h-52 overflow-hidden bg-slate-200">
+    <article className="group overflow-hidden rounded-2xl border border-sand bg-cream-light shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+      <div className="relative h-52 overflow-hidden bg-sand/30">
         <img
           src={food.image}
           alt={food.name}
@@ -18,16 +18,14 @@ export default function FoodCard({ food }: FoodCardProps) {
 
       <div className="p-5">
         <div className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-orange-50 text-orange-600">
+          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-rust/10 text-rust">
             <Utensils size={17} />
           </div>
 
-          <h3 className="font-bold text-slate-900">{food.name}</h3>
+          <h3 className="font-heading font-bold text-ink">{food.name}</h3>
         </div>
 
-        <p className="mt-3 text-sm leading-6 text-slate-500">
-          {food.description}
-        </p>
+        <p className="mt-3 text-sm leading-6 text-ink/60">{food.description}</p>
       </div>
     </article>
   );
