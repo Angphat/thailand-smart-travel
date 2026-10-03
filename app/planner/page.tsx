@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 type DayPlan = {
   day: number;
@@ -40,7 +40,7 @@ const currencies = [
   { code: "THB", name: "Thai Baht", symbol: "฿" },
 ];
 
-export default function PlannerPage() {
+function PlannerContent() {
   const searchParams = useSearchParams();
 
   const destinationFromUrl = searchParams.get("destination") || "";
@@ -474,5 +474,12 @@ export default function PlannerPage() {
         </section>
       )}
     </main>
+  );
+}
+export default function PlannerPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-cream" />}>
+      <PlannerContent />
+    </Suspense>
   );
 }
