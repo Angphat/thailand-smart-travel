@@ -66,7 +66,23 @@ export default function LoginPage() {
         >
           {loading ? "Signing in..." : "Login"}
         </button>
+        {error && <p className="text-sm text-rust">{error}</p>}
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full rounded-xl bg-moss px-4 py-3 font-semibold text-cream-light transition hover:bg-moss-dark disabled:opacity-50"
+        >
+          {loading ? "Signing in..." : "Login"}
+        </button>
       </form>
+
+      <p className="mt-5 text-center text-sm text-ink/60">
+        Don&apos;t have an account?{" "}
+        <a href="/register" className="font-semibold text-moss hover:underline">
+          Register here
+        </a>
+      </p>
     </main>
   );
 }

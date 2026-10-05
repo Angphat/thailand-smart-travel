@@ -72,6 +72,13 @@ export default function RegisterPage() {
           {loading ? "Creating account..." : "Register"}
         </button>
       </form>
+
+      <p className="mt-5 text-center text-sm text-ink/60">
+        Already have an account?{" "}
+        <a href="/login" className="font-semibold text-moss hover:underline">
+          Login here
+        </a>
+      </p>
     </main>
   );
 }
