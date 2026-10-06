@@ -14,6 +14,7 @@ import {
   Lock,
   LogOut,
   User as UserIcon,
+  LayoutDashboard,
 } from "lucide-react";
 
 type NavbarUser = {
@@ -38,6 +39,8 @@ const navItems = [
 export default function Navbar({ user }: { user: NavbarUser }) {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const isAdmin = user?.role === "ADMIN";
 
   async function handleLogout() {
     await fetch("/api/auth/logout", { method: "POST" });
@@ -86,6 +89,19 @@ export default function Navbar({ user }: { user: NavbarUser }) {
               </Link>
             );
           })}
+
+          {isAdmin && (
+            <Link
+              href="/admin"
+              className="group flex items-center gap-1.5 rounded-xl px-3 py-2.5 text-sm font-medium text-rust transition hover:bg-rust/10"
+            >
+              <LayoutDashboard
+                size={16}
+                className="transition group-hover:scale-105"
+              />
+              Admin Dashboard
+            </Link>
+          )}
         </nav>
 
         {/* CTA + Auth */}
@@ -133,6 +149,17 @@ export default function Navbar({ user }: { user: NavbarUser }) {
       {menuOpen && (
         <div className="border-t border-sand bg-cream-light px-5 py-4 lg:hidden">
           <nav className="flex flex-col gap-1">
+            {isAdmin && (
+              <Link
+                href="/admin"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-3 rounded-xl bg-rust/10 px-4 py-3 text-sm font-semibold text-rust"
+              >
+                <LayoutDashboard size={18} />
+                Admin Dashboard
+              </Link>
+            )}
+
             {navItems.map((item) => {
               const Icon = item.icon;
               const locked = item.memberOnly && !user;

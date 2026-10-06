@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function RegisterPage() {
@@ -8,6 +8,12 @@ export default function RegisterPage() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [redirectTo, setRedirectTo] = useState<string | null>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setRedirectTo(params.get("redirect"));
+  }, []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -28,12 +34,26 @@ export default function RegisterPage() {
       return;
     }
 
-    router.push("/login");
+    router.push(
+      redirectTo
+        ? `/login?redirect=${encodeURIComponent(redirectTo)}`
+        : "/login",
+    );
   }
+
+  const loginHref = redirectTo
+    ? `/login?redirect=${encodeURIComponent(redirectTo)}`
+    : "/login";
 
   return (
     <main className="mx-auto max-w-md px-6 py-20">
       <h1 className="font-heading text-2xl font-bold text-ink">Register</h1>
+
+      {redirectTo && (
+        <p className="mt-2 text-sm text-ink/60">
+          Create a free account to continue to the AI Travel Planner.
+        </p>
+      )}
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-4">
         <input
@@ -75,7 +95,7 @@ export default function RegisterPage() {
 
       <p className="mt-5 text-center text-sm text-ink/60">
         Already have an account?{" "}
-        <a href="/login" className="font-semibold text-moss hover:underline">
+        <a href={loginHref} className="font-semibold text-moss hover:underline">
           Login here
         </a>
       </p>

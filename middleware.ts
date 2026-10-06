@@ -7,7 +7,8 @@ export async function middleware(req: NextRequest) {
 
   const { pathname } = req.nextUrl;
 
-  // /admin ต้องเป็น ADMIN เท่านั้น
+  // /admin ต้องเป็น ADMIN เท่านั้น — ยังเด้งไป /login เหมือนเดิม
+  // เพราะคนที่จะเป็น Admin ต้องมีบัญชีอยู่แล้วเสมอ (ไม่ได้สมัครเองผ่านหน้า public)
   if (pathname.startsWith("/admin")) {
     if (!session || session.role !== "ADMIN") {
       return NextResponse.redirect(new URL("/login", req.url));
@@ -15,12 +16,12 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // /planner ต้อง login ก่อน (role อะไรก็ได้)
+  // /planner เด้งไป /register ก่อน เพราะคนส่วนใหญ่ที่เจอหน้านี้ครั้งแรกยังไม่มีบัญชี
   if (pathname.startsWith("/planner")) {
     if (!session) {
-      const loginUrl = new URL("/login", req.url);
-      loginUrl.searchParams.set("redirect", pathname);
-      return NextResponse.redirect(loginUrl);
+      const registerUrl = new URL("/register", req.url);
+      registerUrl.searchParams.set("redirect", pathname);
+      return NextResponse.redirect(registerUrl);
     }
     return NextResponse.next();
   }

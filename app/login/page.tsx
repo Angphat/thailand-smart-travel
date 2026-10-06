@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
@@ -8,6 +8,12 @@ export default function LoginPage() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [redirectTo, setRedirectTo] = useState<string | null>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setRedirectTo(params.get("redirect"));
+  }, []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -28,12 +34,13 @@ export default function LoginPage() {
       return;
     }
 
-    const params = new URLSearchParams(window.location.search);
-    const redirectTo = params.get("redirect");
-
     router.push(redirectTo ?? (data.role === "ADMIN" ? "/admin" : "/"));
     router.refresh();
   }
+
+  const registerHref = redirectTo
+    ? `/register?redirect=${encodeURIComponent(redirectTo)}`
+    : "/register";
 
   return (
     <main className="mx-auto max-w-md px-6 py-20">
@@ -66,20 +73,14 @@ export default function LoginPage() {
         >
           {loading ? "Signing in..." : "Login"}
         </button>
-        {error && <p className="text-sm text-rust">{error}</p>}
-
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full rounded-xl bg-moss px-4 py-3 font-semibold text-cream-light transition hover:bg-moss-dark disabled:opacity-50"
-        >
-          {loading ? "Signing in..." : "Login"}
-        </button>
       </form>
 
       <p className="mt-5 text-center text-sm text-ink/60">
         Don&apos;t have an account?{" "}
-        <a href="/register" className="font-semibold text-moss hover:underline">
+        <a
+          href={registerHref}
+          className="font-semibold text-moss hover:underline"
+        >
           Register here
         </a>
       </p>
