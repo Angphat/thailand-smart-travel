@@ -116,13 +116,22 @@ export default function Navbar({ user }: { user: NavbarUser }) {
           </Link>
 
           {user ? (
-            <button
-              onClick={handleLogout}
-              className="flex items-center gap-2 rounded-xl border border-sand px-3 py-2.5 text-sm font-medium text-ink/70 transition hover:bg-cream"
-            >
-              <LogOut size={16} />
-              Logout
-            </button>
+            <>
+              <Link
+                href="/profile"
+                className="flex items-center gap-2 rounded-xl border border-sand px-3 py-2.5 text-sm font-medium text-ink/70 transition hover:bg-cream"
+              >
+                <UserIcon size={16} />
+                My Account
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="flex items-center gap-2 rounded-xl border border-sand px-3 py-2.5 text-sm font-medium text-ink/70 transition hover:bg-cream"
+              >
+                <LogOut size={16} />
+                Logout
+              </button>
+            </>
           ) : (
             <Link
               href="/login"
@@ -191,13 +200,23 @@ export default function Navbar({ user }: { user: NavbarUser }) {
             </Link>
 
             {user ? (
-              <button
-                onClick={handleLogout}
-                className="mt-2 flex items-center justify-center gap-2 rounded-xl border border-sand px-4 py-3 text-sm font-medium text-ink/70"
-              >
-                <LogOut size={16} />
-                Logout
-              </button>
+              <>
+                <Link
+                  href="/profile"
+                  onClick={() => setMenuOpen(false)}
+                  className="mt-2 flex items-center justify-center gap-2 rounded-xl border border-sand px-4 py-3 text-sm font-medium text-ink/70"
+                >
+                  <UserIcon size={16} />
+                  My Account
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="mt-2 flex items-center justify-center gap-2 rounded-xl border border-sand px-4 py-3 text-sm font-medium text-ink/70"
+                >
+                  <LogOut size={16} />
+                  Logout
+                </button>
+              </>
             ) : (
               <Link
                 href="/login"

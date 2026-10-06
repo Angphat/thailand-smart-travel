@@ -47,6 +47,11 @@ export { Prisma }
  */
 export type User = Prisma.UserModel
 /**
+ * Model PlanHistory
+ * 
+ */
+export type PlanHistory = Prisma.PlanHistoryModel
+/**
  * Model Destination
  * 
  */

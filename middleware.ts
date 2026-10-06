@@ -16,6 +16,16 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
+  // /profile ต้อง login ก่อน เหมือน /planner
+  if (pathname.startsWith("/profile")) {
+    if (!session) {
+      const registerUrl = new URL("/register", req.url);
+      registerUrl.searchParams.set("redirect", pathname);
+      return NextResponse.redirect(registerUrl);
+    }
+    return NextResponse.next();
+  }
+
   // /planner เด้งไป /register ก่อน เพราะคนส่วนใหญ่ที่เจอหน้านี้ครั้งแรกยังไม่มีบัญชี
   if (pathname.startsWith("/planner")) {
     if (!session) {
@@ -30,5 +40,10 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/planner/:path*", "/api/planner/:path*"],
+  matcher: [
+    "/admin/:path*",
+    "/planner/:path*",
+    "/api/planner/:path*",
+    "/profile/:path*",
+  ],
 };

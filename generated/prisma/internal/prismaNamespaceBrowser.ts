@@ -52,6 +52,7 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   User: 'User',
+  PlanHistory: 'PlanHistory',
   Destination: 'Destination',
   Food: 'Food',
   Tip: 'Tip',
@@ -86,6 +87,20 @@ export const UserScalarFieldEnum = {
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const PlanHistoryScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  destination: 'destination',
+  days: 'days',
+  budget: 'budget',
+  interest: 'interest',
+  itinerary: 'itinerary',
+  createdAt: 'createdAt'
+} as const
+
+export type PlanHistoryScalarFieldEnum = (typeof PlanHistoryScalarFieldEnum)[keyof typeof PlanHistoryScalarFieldEnum]
 
 
 export const DestinationScalarFieldEnum = {
@@ -168,12 +183,28 @@ export const SortOrder = {
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
+export const JsonNullValueInput = {
+  JsonNull: JsonNull
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
+
+
 export const QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
 } as const
 
 export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 
 
 export const NullsOrder = {

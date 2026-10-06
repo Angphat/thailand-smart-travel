@@ -398,6 +398,7 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   User: 'User',
+  PlanHistory: 'PlanHistory',
   Destination: 'Destination',
   Food: 'Food',
   Tip: 'Tip',
@@ -418,7 +419,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "destination" | "food" | "tip" | "booking" | "review"
+    modelProps: "user" | "planHistory" | "destination" | "food" | "tip" | "booking" | "review"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -493,6 +494,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.UserCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.UserCountAggregateOutputType> | number
+        }
+      }
+    }
+    PlanHistory: {
+      payload: Prisma.$PlanHistoryPayload<ExtArgs>
+      fields: Prisma.PlanHistoryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PlanHistoryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlanHistoryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PlanHistoryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlanHistoryPayload>
+        }
+        findFirst: {
+          args: Prisma.PlanHistoryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlanHistoryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PlanHistoryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlanHistoryPayload>
+        }
+        findMany: {
+          args: Prisma.PlanHistoryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlanHistoryPayload>[]
+        }
+        create: {
+          args: Prisma.PlanHistoryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlanHistoryPayload>
+        }
+        createMany: {
+          args: Prisma.PlanHistoryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.PlanHistoryCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlanHistoryPayload>[]
+        }
+        delete: {
+          args: Prisma.PlanHistoryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlanHistoryPayload>
+        }
+        update: {
+          args: Prisma.PlanHistoryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlanHistoryPayload>
+        }
+        deleteMany: {
+          args: Prisma.PlanHistoryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PlanHistoryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.PlanHistoryUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlanHistoryPayload>[]
+        }
+        upsert: {
+          args: Prisma.PlanHistoryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlanHistoryPayload>
+        }
+        aggregate: {
+          args: Prisma.PlanHistoryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePlanHistory>
+        }
+        groupBy: {
+          args: Prisma.PlanHistoryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PlanHistoryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PlanHistoryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PlanHistoryCountAggregateOutputType> | number
         }
       }
     }
@@ -918,6 +993,20 @@ export const UserScalarFieldEnum = {
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
+export const PlanHistoryScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  destination: 'destination',
+  days: 'days',
+  budget: 'budget',
+  interest: 'interest',
+  itinerary: 'itinerary',
+  createdAt: 'createdAt'
+} as const
+
+export type PlanHistoryScalarFieldEnum = (typeof PlanHistoryScalarFieldEnum)[keyof typeof PlanHistoryScalarFieldEnum]
+
+
 export const DestinationScalarFieldEnum = {
   id: 'id',
   name: 'name',
@@ -998,12 +1087,28 @@ export const SortOrder = {
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
+export const JsonNullValueInput = {
+  JsonNull: JsonNull
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
+
+
 export const QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
 } as const
 
 export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 
 
 export const NullsOrder = {
@@ -1059,6 +1164,20 @@ export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'In
  * Reference to a field of type 'Int[]'
  */
 export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Json'
+ */
+export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+    
+
+
+/**
+ * Reference to a field of type 'QueryMode'
+ */
+export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
     
 
 
@@ -1227,6 +1346,7 @@ export interface PrismaClientOptionsWithAdapter extends PrismaClientBaseOptions 
 export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaClientOptionsWithAdapter
 export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
+  planHistory?: Prisma.PlanHistoryOmit
   destination?: Prisma.DestinationOmit
   food?: Prisma.FoodOmit
   tip?: Prisma.TipOmit

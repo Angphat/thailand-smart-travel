@@ -1,3 +1,4 @@
+import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
 import { ai } from "@/lib/gemini";
@@ -218,6 +219,22 @@ Create one object inside "days" for every day of the trip.
         },
         { status: 500 },
       );
+    }
+
+    // บันทึกประวัติการแพลนลง database — ไม่บล็อกการตอบกลับถ้าบันทึกพลาด
+    try {
+      await db.planHistory.create({
+        data: {
+          userId: user.userId,
+          destination,
+          days: Number(days),
+          budget: String(budget),
+          interest,
+          itinerary,
+        },
+      });
+    } catch (saveError) {
+      console.error("Failed to save plan history:", saveError);
     }
 
     return NextResponse.json({

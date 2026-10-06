@@ -18,6 +18,20 @@ model User {
 
   bookings Booking[]
   reviews  Review[]
+  planHistory PlanHistory[]
+}
+
+model PlanHistory {
+  id          String   @id @default(cuid())
+  userId      String
+  destination String
+  days        Int
+  budget      String
+  interest    String
+  itinerary   Json
+  createdAt   DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Destination {
