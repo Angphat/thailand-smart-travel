@@ -19,13 +19,13 @@ export default async function AdminUsersPage() {
   return (
     <div>
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-slate-900">Users</h1>
-        <p className="mt-1 text-sm text-slate-500">{users.length} total</p>
+        <h1 className="font-heading text-2xl font-bold text-ink">Users</h1>
+        <p className="mt-1 text-sm text-ink/50">{users.length} total</p>
       </div>
 
-      <div className="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+      <div className="overflow-hidden rounded-2xl bg-cream-light shadow-sm ring-1 ring-sand">
         <table className="w-full text-left text-sm">
-          <thead className="bg-slate-50 text-slate-500">
+          <thead className="bg-cream text-ink/50">
             <tr>
               <th className="px-5 py-3 font-medium">Name</th>
               <th className="px-5 py-3 font-medium">Email</th>
@@ -34,28 +34,26 @@ export default async function AdminUsersPage() {
               <th className="px-5 py-3 font-medium">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-100">
+          <tbody className="divide-y divide-sand">
             {users.map((u) => {
               const isSelf = u.id === currentUser?.userId;
 
               return (
                 <tr key={u.id}>
-                  <td className="px-5 py-3 font-medium text-slate-900">
-                    {u.name}
-                  </td>
-                  <td className="px-5 py-3 text-slate-600">{u.email}</td>
+                  <td className="px-5 py-3 font-medium text-ink">{u.name}</td>
+                  <td className="px-5 py-3 text-ink/70">{u.email}</td>
                   <td className="px-5 py-3">
                     <span
                       className={`rounded-full px-3 py-1 text-xs font-semibold ${
                         u.role === "ADMIN"
-                          ? "bg-red-50 text-red-600"
-                          : "bg-slate-100 text-slate-600"
+                          ? "bg-rust/10 text-rust"
+                          : "bg-sand/50 text-ink/60"
                       }`}
                     >
                       {u.role}
                     </span>
                   </td>
-                  <td className="px-5 py-3 text-slate-500">
+                  <td className="px-5 py-3 text-ink/50">
                     {new Date(u.createdAt).toLocaleDateString()}
                   </td>
                   <td className="px-5 py-3">
@@ -70,7 +68,7 @@ export default async function AdminUsersPage() {
                         <button
                           type="submit"
                           disabled={isSelf}
-                          className="font-medium text-blue-600 hover:underline disabled:cursor-not-allowed disabled:text-slate-300"
+                          className="font-medium text-moss hover:underline disabled:cursor-not-allowed disabled:text-ink/20"
                         >
                           Make {u.role === "ADMIN" ? "USER" : "ADMIN"}
                         </button>
@@ -80,7 +78,7 @@ export default async function AdminUsersPage() {
                         <button
                           type="submit"
                           disabled={isSelf}
-                          className="font-medium text-red-600 hover:underline disabled:cursor-not-allowed disabled:text-slate-300"
+                          className="font-medium text-rust hover:underline disabled:cursor-not-allowed disabled:text-ink/20"
                         >
                           Delete
                         </button>

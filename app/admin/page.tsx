@@ -18,10 +18,8 @@ export default async function AdminDashboardPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-slate-900">Dashboard</h1>
-      <p className="mt-1 text-sm text-slate-500">
-        Overview of your website data
-      </p>
+      <h1 className="font-heading text-2xl font-bold text-ink">Dashboard</h1>
+      <p className="mt-1 text-sm text-ink/50">Overview of your website data</p>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat) => {
@@ -29,15 +27,13 @@ export default async function AdminDashboardPage() {
           return (
             <div
               key={stat.label}
-              className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200"
+              className="rounded-2xl bg-cream-light p-6 shadow-sm ring-1 ring-sand"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-50 text-red-600">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-moss/10 text-moss">
                 <Icon size={20} />
               </div>
-              <p className="mt-4 text-3xl font-bold text-slate-900">
-                {stat.value}
-              </p>
-              <p className="mt-1 text-sm text-slate-500">{stat.label}</p>
+              <p className="mt-4 text-3xl font-bold text-ink">{stat.value}</p>
+              <p className="mt-1 text-sm text-ink/50">{stat.label}</p>
             </div>
           );
         })}

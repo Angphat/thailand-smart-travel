@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   Menu,
   X,
@@ -15,6 +15,7 @@ import {
   LogOut,
   User as UserIcon,
   LayoutDashboard,
+  ChevronDown,
 } from "lucide-react";
 
 type NavbarUser = {
@@ -39,12 +40,28 @@ const navItems = [
 export default function Navbar({ user }: { user: NavbarUser }) {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [accountOpen, setAccountOpen] = useState(false);
+  const accountRef = useRef<HTMLDivElement>(null);
 
   const isAdmin = user?.role === "ADMIN";
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        accountRef.current &&
+        !accountRef.current.contains(e.target as Node)
+      ) {
+        setAccountOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   async function handleLogout() {
     await fetch("/api/auth/logout", { method: "POST" });
     setMenuOpen(false);
+    setAccountOpen(false);
     router.push("/");
     router.refresh();
   }
@@ -56,7 +73,7 @@ export default function Navbar({ user }: { user: NavbarUser }) {
         <Link
           href="/"
           onClick={() => setMenuOpen(false)}
-          className="flex items-center gap-3"
+          className="flex shrink-0 items-center gap-3"
         >
           <div className="relative flex h-11 w-11 items-center justify-center rounded-2xl bg-ink text-xl shadow-sm">
             🇹🇭
@@ -72,7 +89,7 @@ export default function Navbar({ user }: { user: NavbarUser }) {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-0.5 lg:flex">
           {navItems.map((item) => {
             const Icon = item.icon;
             const locked = item.memberOnly && !user;
@@ -81,34 +98,24 @@ export default function Navbar({ user }: { user: NavbarUser }) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group flex items-center gap-1.5 rounded-xl px-3 py-2.5 text-sm font-medium text-ink/70 transition hover:bg-moss/10 hover:text-moss"
+                className="group flex items-center gap-1.5 whitespace-nowrap rounded-xl px-2.5 py-2.5 text-sm font-medium text-ink/70 transition hover:bg-moss/10 hover:text-moss"
               >
-                <Icon size={16} className="transition group-hover:scale-105" />
+                <Icon
+                  size={16}
+                  className="shrink-0 transition group-hover:scale-105"
+                />
                 {item.name}
-                {locked && <Lock size={12} className="text-rust" />}
+                {locked && <Lock size={12} className="shrink-0 text-rust" />}
               </Link>
             );
           })}
-
-          {isAdmin && (
-            <Link
-              href="/admin"
-              className="group flex items-center gap-1.5 rounded-xl px-3 py-2.5 text-sm font-medium text-rust transition hover:bg-rust/10"
-            >
-              <LayoutDashboard
-                size={16}
-                className="transition group-hover:scale-105"
-              />
-              Admin Dashboard
-            </Link>
-          )}
         </nav>
 
         {/* CTA + Auth */}
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-2 lg:flex">
           <Link
             href="/planner"
-            className="inline-flex items-center gap-2 rounded-xl bg-moss px-4 py-2.5 text-sm font-semibold text-cream-light shadow-sm transition hover:bg-moss-dark"
+            className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl bg-moss px-4 py-2.5 text-sm font-semibold text-cream-light shadow-sm transition hover:bg-moss-dark"
           >
             <Sparkles size={16} />
             Plan My Trip
@@ -116,26 +123,54 @@ export default function Navbar({ user }: { user: NavbarUser }) {
           </Link>
 
           {user ? (
-            <>
-              <Link
-                href="/profile"
-                className="flex items-center gap-2 rounded-xl border border-sand px-3 py-2.5 text-sm font-medium text-ink/70 transition hover:bg-cream"
+            <div className="relative" ref={accountRef}>
+              <button
+                onClick={() => setAccountOpen((v) => !v)}
+                className="flex items-center gap-1.5 whitespace-nowrap rounded-xl border border-sand px-3 py-2.5 text-sm font-medium text-ink/70 transition hover:bg-cream"
               >
                 <UserIcon size={16} />
-                My Account
-              </Link>
-              <button
-                onClick={handleLogout}
-                className="flex items-center gap-2 rounded-xl border border-sand px-3 py-2.5 text-sm font-medium text-ink/70 transition hover:bg-cream"
-              >
-                <LogOut size={16} />
-                Logout
+                <ChevronDown
+                  size={14}
+                  className={
+                    accountOpen ? "rotate-180 transition" : "transition"
+                  }
+                />
               </button>
-            </>
+
+              {accountOpen && (
+                <div className="absolute right-0 top-full mt-2 w-52 overflow-hidden rounded-xl border border-sand bg-cream-light shadow-lg">
+                  {isAdmin && (
+                    <Link
+                      href="/admin"
+                      onClick={() => setAccountOpen(false)}
+                      className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-rust transition hover:bg-rust/10"
+                    >
+                      <LayoutDashboard size={16} />
+                      Admin Dashboard
+                    </Link>
+                  )}
+                  <Link
+                    href="/profile"
+                    onClick={() => setAccountOpen(false)}
+                    className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-ink/80 transition hover:bg-moss/10"
+                  >
+                    <UserIcon size={16} />
+                    My Account
+                  </Link>
+                  <button
+                    onClick={handleLogout}
+                    className="flex w-full items-center gap-2 border-t border-sand px-4 py-3 text-left text-sm font-medium text-ink/80 transition hover:bg-cream"
+                  >
+                    <LogOut size={16} />
+                    Logout
+                  </button>
+                </div>
+              )}
+            </div>
           ) : (
             <Link
               href="/login"
-              className="flex items-center gap-2 rounded-xl border border-sand px-3 py-2.5 text-sm font-medium text-ink/70 transition hover:bg-cream"
+              className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-sand px-3 py-2.5 text-sm font-medium text-ink/70 transition hover:bg-cream"
             >
               <UserIcon size={16} />
               Login
@@ -147,7 +182,7 @@ export default function Navbar({ user }: { user: NavbarUser }) {
         <button
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded-xl border border-sand text-ink lg:hidden"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-sand text-ink lg:hidden"
           aria-label="Toggle navigation"
         >
           {menuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -166,6 +201,17 @@ export default function Navbar({ user }: { user: NavbarUser }) {
               >
                 <LayoutDashboard size={18} />
                 Admin Dashboard
+              </Link>
+            )}
+
+            {user && (
+              <Link
+                href="/profile"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-ink/80 hover:bg-moss/10"
+              >
+                <UserIcon size={18} />
+                My Account
               </Link>
             )}
 
@@ -200,23 +246,13 @@ export default function Navbar({ user }: { user: NavbarUser }) {
             </Link>
 
             {user ? (
-              <>
-                <Link
-                  href="/profile"
-                  onClick={() => setMenuOpen(false)}
-                  className="mt-2 flex items-center justify-center gap-2 rounded-xl border border-sand px-4 py-3 text-sm font-medium text-ink/70"
-                >
-                  <UserIcon size={16} />
-                  My Account
-                </Link>
-                <button
-                  onClick={handleLogout}
-                  className="mt-2 flex items-center justify-center gap-2 rounded-xl border border-sand px-4 py-3 text-sm font-medium text-ink/70"
-                >
-                  <LogOut size={16} />
-                  Logout
-                </button>
-              </>
+              <button
+                onClick={handleLogout}
+                className="mt-2 flex items-center justify-center gap-2 rounded-xl border border-sand px-4 py-3 text-sm font-medium text-ink/70"
+              >
+                <LogOut size={16} />
+                Logout
+              </button>
             ) : (
               <Link
                 href="/login"
