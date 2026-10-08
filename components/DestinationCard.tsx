@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type Destination = {
@@ -22,10 +23,12 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
     <article className="overflow-hidden rounded-3xl bg-cream-light shadow-sm ring-1 ring-sand transition duration-300 hover:-translate-y-1 hover:shadow-xl">
       {/* Image */}
       <div className="relative aspect-[16/10] overflow-hidden">
-        <img
+        <Image
           src={destination.image}
           alt={destination.name}
-          className="h-full w-full object-cover transition duration-500 hover:scale-105"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition duration-500 hover:scale-105"
         />
 
         {/* Image Gradient */}
@@ -58,7 +61,6 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
 
         {/* Buttons */}
         <div className="mt-5 grid gap-3 sm:grid-cols-2">
-          {/* View Details */}
           <Link
             href={`/destinations/${destination.id}`}
             className="rounded-xl border border-sand px-4 py-3 text-center text-sm font-semibold text-ink/70 transition hover:border-rust/40 hover:bg-rust/10 hover:text-rust"
@@ -66,7 +68,6 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
             View Details
           </Link>
 
-          {/* Plan Trip */}
           <Link
             href={`/planner?destination=${encodeURIComponent(
               destination.name,

@@ -10,6 +10,7 @@ import "./globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import HideOnAdmin from "@/components/HideOnAdmin";
 import { getCurrentUser } from "@/lib/auth";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -54,9 +55,15 @@ export default async function RootLayout({
       <body
         className={`${plusJakarta.variable} ${notoThai.variable} ${fraunces.variable} ${notoSerifThai.variable} antialiased`}
       >
-        <Navbar user={user} />
+        <HideOnAdmin>
+          <Navbar user={user} />
+        </HideOnAdmin>
+
         {children}
-        <Footer />
+
+        <HideOnAdmin>
+          <Footer />
+        </HideOnAdmin>
       </body>
     </html>
   );

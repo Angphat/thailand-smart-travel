@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDestinationById } from "@/lib/destinations";
@@ -21,10 +22,13 @@ export default async function DestinationDetailPage({ params }: Props) {
     <main className="min-h-screen bg-cream">
       {/* Hero Image */}
       <section className="relative h-[420px] overflow-hidden">
-        <img
+        <Image
           src={destination.image}
           alt={destination.name}
-          className="h-full w-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
 
         <div className="absolute inset-0 bg-ink/50" />

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Utensils } from "lucide-react";
 import { Food } from "@/types/food";
 
@@ -9,10 +10,12 @@ export default function FoodCard({ food }: FoodCardProps) {
   return (
     <article className="group overflow-hidden rounded-2xl border border-sand bg-cream-light shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div className="relative h-52 overflow-hidden bg-sand/30">
-        <img
+        <Image
           src={food.image}
           alt={food.name}
-          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className="object-cover transition duration-500 group-hover:scale-105"
         />
       </div>
 

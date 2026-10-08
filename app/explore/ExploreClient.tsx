@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 
 import DestinationCard from "@/components/DestinationCard";
 import foodsData from "@/data/foods.json";
@@ -230,11 +231,13 @@ export default function ExploreClient({ destinations, isLoggedIn }: Props) {
                 key={food.id}
                 className="thai-card overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="aspect-[4/3] overflow-hidden bg-sand/30">
-                  <img
+                <div className="relative aspect-[4/3] overflow-hidden bg-sand/30">
+                  <Image
                     src={food.image}
                     alt={food.name}
-                    className="h-full w-full object-cover transition duration-500 hover:scale-105"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition duration-500 hover:scale-105"
                   />
                 </div>
 

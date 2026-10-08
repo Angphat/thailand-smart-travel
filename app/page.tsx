@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Lock } from "lucide-react";
 import { getCurrentUser } from "@/lib/auth";
 
@@ -165,11 +166,13 @@ export default async function HomePage() {
               href={place.href}
               className="group overflow-hidden rounded-3xl bg-cream-light shadow-sm ring-1 ring-sand transition hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="aspect-[16/10] overflow-hidden bg-sand/40">
-                <img
+              <div className="relative aspect-[16/10] overflow-hidden bg-sand/40">
+                <Image
                   src={place.image}
                   alt={place.name}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition duration-500 group-hover:scale-105"
                 />
               </div>
 
